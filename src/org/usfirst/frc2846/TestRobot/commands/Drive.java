@@ -44,7 +44,7 @@ public class Drive extends Command {
     	double y = Robot.oi.joystick1.getRawAxis(2);
     	double x = Robot.oi.joystick1.getRawAxis(0);
     	double z = Robot.oi.joystick1.getRawAxis(1);
-    	Robot.chassis.driveCommand(-x, y, z);
+    	Robot.chassis.driveCommand(-x, -y, z);
     }
 
     // Make this return true when this Command no longer needs to run execute()

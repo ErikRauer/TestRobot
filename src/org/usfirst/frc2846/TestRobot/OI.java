@@ -11,9 +11,12 @@
 
 package org.usfirst.frc2846.TestRobot;
 
+import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc2846.TestRobot.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc2846.TestRobot.subsystems.*;
 
 
@@ -22,6 +25,10 @@ import org.usfirst.frc2846.TestRobot.subsystems.*;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	public JoystickButton strafeLeft;
+	public JoystickButton strafeRight;
+
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -60,7 +67,11 @@ public class OI {
 
         joystick1 = new Joystick(0);
         
+    	strafeLeft = new JoystickButton(joystick1, 5);
+		strafeLeft.whileHeld(new StrafeCommand(-0.75));
 
+		strafeRight = new JoystickButton(joystick1, 6);
+		strafeRight.whileHeld(new StrafeCommand(0.75));
 
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
