@@ -55,4 +55,14 @@ public class Chassis extends Subsystem {
     	robotDrive41.mecanumDrive_Cartesian(x, y, z, 0);
     }
 }
+//strafe right
+//front right backwards
+//back right forwards
+//front left forwards
+//back left backwards
 
+//strafe left		
+//front right forwards
+//back right backwards
+//front left backwards
+//back left forwards

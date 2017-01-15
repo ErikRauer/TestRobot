@@ -54,13 +54,13 @@ Children:
           name: Right Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Chassis CAN Talon 1
+          value: Chasis CAN Talon 1
         Right Front Motor: !!robotbuilder.data.properties.ChildSelectionProperty
           default: 2
           name: Right Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Chassis CAN Talon 2
+          value: Chasis CAN Talon 3
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Left Front Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
@@ -72,7 +72,7 @@ Children:
           name: Left Rear Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Chassis CAN Talon 3
+          value: Chasis CAN Talon 2
         Right Rear Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {
           default: false, name: Right Rear Motor Inverted, validators: null, value: false}
         Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
@@ -86,7 +86,7 @@ Children:
           name: Left Front Motor
           type: PIDOutput
           validators: [RobotDrive4, ChildDropdownSelected]
-          value: Chassis CAN Talon 4
+          value: Chasis CAN Talon 4
       Base: Robot Drive 4
       Name: Robot Drive 4 1
     Properties:
@@ -96,14 +96,14 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: Drive}
+        name: Default Command, type: Command, validators: null, value: DriveCommand}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
         validators: null
         value: []
     Base: Subsystem
-    Name: Chassis
+    Name: Chasis
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -132,10 +132,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id003 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id003
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
@@ -148,22 +148,22 @@ Children:
         validators: null
         value: []
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Chassis}
+        name: Requires, type: Subsystem, validators: null, value: Chasis}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id004 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id004
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: Drive
+    Name: DriveCommand
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Zach\workspace',
-    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\Users\Zach\workspace'}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Keith\workspace',
+    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: 'C:\Users\Keith\workspace'}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Autonomous command parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -172,18 +172,18 @@ Properties:
     validators: null
     value: []
   Java Package: !!robotbuilder.data.properties.StringProperty {default: org.usfirst.frc0000,
-    name: Java Package, validators: null, value: org.usfirst.frc2846}
+    name: Java Package, validators: null, value: org.usfirst.frc0000}
   Use Default Java Package: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Use Default Java Package, validators: null, value: true}
   Team Number: !!robotbuilder.data.properties.IntegerProperty {default: 0, name: Team Number,
-    validators: null, value: 2846}
+    validators: null, value: 0}
   Export Subsystems: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Subsystems, validators: null, value: true}
   Simulation World File: !!robotbuilder.data.properties.StringProperty {default: /usr/share/frcsim/worlds/GearsBotDemo.world,
     name: Simulation World File, validators: null, value: /usr/share/frcsim/worlds/GearsBotDemo.world}
-  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Zach\',
-    extension: null, folder: true, name: Wiring file location, validators: null, value: 'C:\Users\Zach\'}
+  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Keith\',
+    extension: null, folder: true, name: Wiring file location, validators: null, value: .\}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
 Base: Robot
-Name: TestRobot
+Name: MyRobot
