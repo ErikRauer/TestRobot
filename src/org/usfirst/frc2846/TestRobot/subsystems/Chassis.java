@@ -17,6 +17,7 @@ import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.RobotDrive;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -52,8 +53,11 @@ public class Chassis extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-    public void driveCommand(double straif ,double forward, double rotation){
-    	robotDrive.mecanumDrive_Cartesian(straif, forward, rotation, 0);
+    public void driveCommand(double strafe ,double forward, double rotation){
+    	SmartDashboard.putNumber("Chassis.strafe", strafe);
+    	SmartDashboard.putNumber("Chassis.forward", forward);
+    	SmartDashboard.putNumber("Chassis.rotation", rotation);
+    	robotDrive.mecanumDrive_Cartesian(strafe, forward, rotation, 0);
     }
 }
 //strafe right
