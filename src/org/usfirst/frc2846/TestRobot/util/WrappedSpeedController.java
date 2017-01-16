@@ -1,5 +1,7 @@
 package org.usfirst.frc2846.TestRobot.util;
 
+import org.usfirst.frc2846.TestRobot.RobotMap;
+
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -25,7 +27,9 @@ public class WrappedSpeedController implements SpeedController {
 
 	@Override
 	public void set(double speed) {
-		SmartDashboard.putNumber("Controller." + name, speed);
+		if (RobotMap.DEBUG) {
+			SmartDashboard.putNumber("Controller." + name, speed);
+		}
 		speedController.set(speed);
 	}
 
