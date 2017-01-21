@@ -41,10 +41,12 @@ public class Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
 
-    	double forward = Robot.oi.joystick1.getY();
-    	double strafe = Robot.oi.joystick1.getX(); 
-    	double rotation = Robot.oi.joystick1.getZ();
-    	
+    	double forward = Robot.oi.joystick1.getRawAxis(1);
+    	double strafe = Robot.oi.joystick1.getRawAxis(0); 
+    	double rotation = Robot.oi.joystick1.getRawAxis(2);
+    	if (rotation>-0.3 && rotation<0.3){
+    		rotation = 0;
+    	}
     	Robot.chassis.driveCommand(strafe, forward, rotation);
     }
 
